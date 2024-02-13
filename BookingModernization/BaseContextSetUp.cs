@@ -5,6 +5,8 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Drawing;
+using OpenQA.Selenium.Interactions;
+
 
 namespace BookingModernization
 {
@@ -21,11 +23,9 @@ namespace BookingModernization
         {
             testName = TestContext.CurrentContext.Test.Name;
             reportGenerator.CreateTestInReport(testName);
-
             ChromeOptions chromeOption = new ChromeOptions();
             //chromeOption.AddArguments("--headless=new");
             Browser = new ChromeDriver(chromeOption);
-
             Browser.Manage().Window.Size = new Size(1936, 1048);
             BookingAppBaseUrl = new Uri("http://modernization-frontend.s3-website-us-east-1.amazonaws.com/");
             Wait = new WebDriverWait(Browser, TimeSpan.FromSeconds(double.Parse("10")));

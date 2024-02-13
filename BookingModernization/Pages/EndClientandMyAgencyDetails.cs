@@ -10,10 +10,13 @@ namespace BookingModernization.Pages
         private readonly BaseContextSetUp contextSetUp;
         private IWebElement NextButton { get => contextSetUp.Wait.Until(ExpectedConditions.ElementIsVisible(By.Id("//*[@id='client - and - agency - collapse - body']/div/button"))); }
         private IWebElement EndClinedExpandCollaps { get => contextSetUp.Wait.Until(ExpectedConditions.ElementIsVisible(By.Id("//*[@id='client - and - agency - collapse - body']"))); }
-        public IWebElement ContactSameAsAbove { get => contextSetUp.Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='client-and-agency-collapse-body']/div/div/section[2]/div[1]/label/input"))); }
+        
 
         public EndClientandMyAgencyDetails(BaseContextSetUp contextSetUp)
         { this.contextSetUp = contextSetUp; }
+        public IWebElement ContactSameAsAbove { get => contextSetUp.Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='client-and-agency-collapse-body']/div/div/section[2]/div[1]/label/input"))); }
+        public IWebElement PhoneToolTip { get => contextSetUp.Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='client-and-agency-collapse-body']/div/div/section[1]/app-new-user-details/div/app-input-control[4]/div[2]/div/ng-component/div[1]/svg"))); }
+        public IWebElement HoverToolTip { get => contextSetUp.Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='client-and-agency-collapse-body']/div/div/section[1]/app-new-user-details/div/app-input-control[4]/div[2]/div/ng-component/div[2]/div[2]/p[1]"))); }
         public IWebElement POFirstName { get => contextSetUp.Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='client-and-agency-collapse-body']/div/div/section[1]/app-new-user-details/div/app-input-control[1]/div/input"))); }
         public IWebElement POLastName { get => contextSetUp.Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='client-and-agency-collapse-body']/div/div/section[1]/app-new-user-details/div/app-input-control[2]/div/input"))); }
         public IWebElement POEmail { get => contextSetUp.Wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//*[@id='client-and-agency-collapse-body']/div/div/section [1]/app-new-user-details/div/app-input-control[3]/div/input"))); }
